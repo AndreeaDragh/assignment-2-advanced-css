@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation </title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #050210;
+        }
+        .gradient{
+            position: relative;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: linear-gradient(#fb5dad, #55fb9f, #b97aff);
+            animation: animate 1s linear infinite;
+            box-shadow: 0 0 100px #fb5dad, #55fb9f, #b97aff;
+        }
+        .gradient span{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: linear-gradient(#fb5dad, #55fb9f, #b97aff);
+            animation: animate 10s linear infinite;
+        }
+        .gradient span:nth-child(1){
+            filter: blur(5px);
+        }
+        .gradient span:nth-child(2){
+            filter: blur(8px);
+        }
+        .gradient span:nth-child(3){
+            filter: blur(10px);
+        }
+        .gradient span:nth-child(4){
+            filter: blur(40px);
+        }
+        .gradient::after{
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            right: 20px;
+            bottom: 20px;
+            background:radial-gradient(#202020, #050210);
+            border-radius: 50%;
+        }
+        @keyframes animate{
+            0%{
+                transform: rotate(0deg);
+            }
+            100%{
+                transform: rotate(360deg);
+            }
+        }
+
+    </style>
+</head>
+<body>
+<div class="gradient">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+</body>
+</html>
